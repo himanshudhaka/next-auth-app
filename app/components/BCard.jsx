@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 import Graph from "react-apexcharts";
 import { useState } from "react";
 const BCard = ({ type }) => {
@@ -95,7 +95,9 @@ const BCard = ({ type }) => {
   return (
     <div className="bg-white px-5 py-5 md:px-10 md:py-8 mt-10 rounded-xl">
       <div className="flex md:flex-row flex-col justify-between items-baseline">
-        <h1 className="text-2xl text-black font-bold">Today's Schedule</h1>
+        <h1 className="text-2xl text-black font-bold">
+          Today<span>&#44;</span>s Schedule
+        </h1>
         <p className="text-gray-400">See All </p>
       </div>
       <div className="mt-6">

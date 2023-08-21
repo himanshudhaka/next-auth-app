@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 import { useState } from "react";
 // import { Line } from "react-chartjs-2";
 import Graph from "react-apexcharts";

@@ -10,15 +10,15 @@ export default function Home() {
   const data = useSession();
   console.log(data);
 
-  if (data.status === "loading") {
+  if (data?.status === "loading") {
     return <p>loading ....</p>;
   }
-  if (data.status === "unauthenticated") {
+  if (data?.status === "unauthenticated") {
     return <p>unauthenticated</p>;
   }
   return (
     <>
-      <Nav data={data.data.user} />
+      <Nav data={data?.data?.user} />
       <Cards />
       <Chart />
       <div className="md:grid mb-5 md:grid-cols-2 md:gap-4">

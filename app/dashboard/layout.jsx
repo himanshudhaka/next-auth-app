@@ -9,12 +9,18 @@ import img3 from "../../public/user_icon.png";
 import img4 from "../../public/setting_icon.png";
 import Image from "next/image";
 import imgg from "../../public/guy.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function RootLayout({ children }) {
   const [dropdown, setdropdown] = useState(false);
   const handleChange = () => {
     setdropdown(!dropdown);
   };
+  useEffect(() => {
+    window.navigator.geolocation.getCurrentPosition(
+      (newPos) => setPosition(newPos),
+      console.error
+    );
+  }, []);
   return (
     <div className="md:grid md:grid-cols-9 bg-[#F5F5F5]">
       <div className="md:col-span-2 relative">
