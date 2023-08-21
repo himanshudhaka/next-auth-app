@@ -172,64 +172,9 @@ const Chart = () => {
                 },
               },
             }}
-            data={{
-              labels: [
-                "",
-                "Week 1",
-                "",
-                "Week 2",
-                "",
-                "Week 3",
-                "",
-                "Week 4",
-                "",
-              ],
-              datasets: [
-                {
-                  label: "# of calories lost",
-                  data: [100, 410, 300, 150, 290, 440, 240, 190, 250],
-                  // fill: false,
-                  backgroundColor: "rgb(255,99,132)",
-                  borderColor: "#E9A0A0",
-                  responsive: true,
-                  tension: 0.5,
-                },
-                {
-                  label: "# of calories lost",
-                  data: [200, 390, 270, 200, 250, 300, 250, 230, 470],
-                  fill: false,
-                  backgroundColor: "rgb(255,99,132)",
-                  borderColor: "#9BDD7C",
-                  responsive: true,
-                  tension: 0.5,
-                },
-              ],
-            }}
-          />
-        </div>
-        <Line
-            options={{
-              responsive: true,
-              scales: {
-                x: {
-                  grid: {
-                    display: false,
-                    lineWidth: 0,
-                    weight: 0,
-                    color: "transparent",
-                  },
-                },
-                y: {
-                  min: 0,
-                  max: 500,
-                  ticks: {
-                    stepSize: 100,
-                  },
-                },
-              },
-            }}
             data={data}
           />
+        </div>
       </div>
     </div>
   );
