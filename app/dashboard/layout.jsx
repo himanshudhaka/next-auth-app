@@ -11,28 +11,15 @@ import Image from "next/image";
 import imgg from "../../public/guy.png";
 import { useState, useEffect } from "react";
 export default function RootLayout({ children }) {
-  // const isBrowser = () => typeof window !== "undefined";
-  // const [lastClick, setLastClick] = useState("");
-
-  // if (isBrowser()) {
-  //   window.addEventListener("click", (e) =>
-  //     setLastClick(`${e.pageX}, ${e.pageY}`)
-  //   );
-  // }
+  
   const [dropdown, setdropdown] = useState(false);
   const handleChange = () => {
     setdropdown(!dropdown);
   };
-  useEffect(() => {
-    window.navigator.geolocation.getCurrentPosition(
-      (newPos) => setPosition(newPos),
-      console.error
-    );
-  }, []);
   return (
     <div className="md:grid md:grid-cols-9 bg-[#F5F5F5]">
       <div className="md:col-span-2 relative">
-        <nav className=" max-w-full md:fixed md:w-96 md:h-screen md:p-5">
+        <nav className=" max-w-full md:fixed md:w-1/5 md:w-96 md:h-screen md:p-5">
           <div className="flex flex-col bg-black py-5 md:py-14 md:h-full w-full md:rounded-[30px] justify-between">
             <div className="flex flex-col space-y-5 items-center md:ml-10  justify-center sm:items-stretch sm:justify-start font-bold">
               <div className="md:block w-full md:p-0 px-4 flex items-center justify-between">
