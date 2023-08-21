@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <div className="md:grid md:grid-cols-9 bg-[#F5F5F5]">
       <div className="md:col-span-2 relative">
-        <nav className=" max-w-full md:fixed md:w-1/5 md:w-96 md:h-screen md:p-5">
+        <nav className=" max-w-full md:fixed md:w-1/5 md:left-4 md:h-screen md:p-5">
           <div className="flex flex-col bg-black py-5 md:py-14 md:h-full w-full md:rounded-[30px] justify-between">
             <div className="flex flex-col space-y-5 items-center md:ml-10  justify-center sm:items-stretch sm:justify-start font-bold">
               <div className="md:block w-full md:p-0 px-4 flex items-center justify-between">
