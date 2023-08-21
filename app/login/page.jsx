@@ -32,7 +32,7 @@ const Login = () => {
                 type="submit"
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: "http://localhost:3000/dashboard",
+                    callbackUrl: "https://next-auth-app-kqvd.vercel.app/dashboard",
                   })
                 }
                 className="flex w-full justify-center items-center rounded-md bg-black text-white md:bg-white px-4 py-2 text-sm font-normal leading-6 md:text-gray-300 shadow-sm hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
