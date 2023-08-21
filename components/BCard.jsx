@@ -1,8 +1,21 @@
 "use client";
-import { Chart } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
+import { Chart as Graph } from "react-chartjs-2";
 
 import { useState } from "react";
 const BCard = ({ type }) => {
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "right",
+      },
+      title: {
+        display: false,
+      },
+    },
+  };
   const months = {
     Jan: [55, 31, 14],
     Feb: [65, 25, 10],
@@ -11,23 +24,19 @@ const BCard = ({ type }) => {
     May: [50, 25, 25],
     Jun: [55, 25, 20],
   };
-
   const [stats, setStat] = useState(months["Jan"]);
 
-  // let options = {
-  //   chart: {
-  //     type: "pie",
-  //   },
-  //   colors: ["#98D89E", "#F6DC7D", "#EE8484"],
-  //   labels: ["Basic tees", "Custom Short Pants", "Custom Short Pants"],
-  //   datalabels: {
-  //     enabled: true,
-  //     formatter: function (val) {
-  //       return;
-  //     },
-  //   },
-  // };
-  const series = stats;
+  const data = {
+    labels: ["Blue Tees", "Custom Short Pants", "Super Hoodies"],
+    datasets: [
+      {
+        label: "Dataset 1",
+        data: stats,
+        backgroundColor: ["#98D89E", "#F6DC7D", "#EE8484"],
+      },
+    ],
+  };
+  
 
   const handleChange = (event) => {
     setStat(months[event.target.value]);
@@ -80,15 +89,8 @@ const BCard = ({ type }) => {
             </select>
           </div>
         </div>
-        <div className="mt-6 p-4">
-          {/* <Graph
-            className="mx-auto"
-            options={options}
-            series={series}
-            type="pie"
-            width="100%"
-            height="100%"
-          /> */}
+        <div className="w-full">
+          <Pie options={options} data={data} />
         </div>
       </div>
     );
