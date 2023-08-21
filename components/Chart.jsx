@@ -57,92 +57,47 @@ const Chart = () => {
     },
   };
   const [stats, setStat] = useState(months["Jan"]);
-  const series = [
-    {
-      name: "Guest",
-      data: stats.data1,
-    },
-    {
-      name: "User",
-      data: stats.data2,
-    },
-  ];
-  // const options = {
-  //   chart: {
-  //     height: 350,
-  //     type: "line",
-  //     zoom: {
-  //       enabled: false,
-  //     },
-  //   },
-  //   dataLabels: {
-  //     enabled: false,
-  //     position: "bottom",
-  //   },
-  //   colors: ["#E9A0A0", "#9BDD7C"],
-  //   stroke: {
-  //     width: 3,
-  //     curve: "smooth",
-  //   },
-  //   // legend: {
-  //   //   tooltipHoverFormatter: function (val, opts) {
-  //   //     return (
-  //   //       val +
-  //   //       " - " +
-  //   //       opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] +
-  //   //       ""
-  //   //     );
-  //   //   },
-  //   // },
-  //   markers: {
-  //     size: 0,
-  //     hover: {
-  //       sizeOffset: 6,
-  //     },
-  //   },
-  //   xaxis: {
-  //     categories: [
-  //       "",
-  //       "",
-  //       "Week 1",
-  //       "",
-  //       "",
-  //       "Week 2",
-  //       "",
-  //       "",
-  //       "Week 3",
-  //       "",
-  //       "",
-  //       "Week 4",
-  //       "",
-  //       "",
-  //     ],
-  //   },
-  //   tooltip: {
-  //     y: [
-  //       {
-  //         title: {
-  //           formatter: function (val) {
-  //             return val;
-  //           },
-  //         },
-  //       },
-  //       {
-  //         title: {
-  //           formatter: function (val) {
-  //             return val;
-  //           },
-  //         },
-  //       },
-  //     ],
-  //   },
-  //   grid: {
-  //     borderColor: "#f1f1f1",
-  //   },
-  // };
+  const data = {
+    labels: [
+      "",
+      "",
+      "Week 1",
+      "",
+      "",
+      "Week 2",
+      "",
+      "",
+      "Week 3",
+      "",
+      "",
+      "Week 4",
+      "",
+      "",
+    ],
+    datasets: [
+      {
+        label: "# of calories lost",
+        data: stats.data1,
+        // fill: false,
+        backgroundColor: "rgb(255,99,132)",
+        borderColor: "#E9A0A0",
+        responsive: true,
+        tension: 0.5,
+      },
+      {
+        label: "# of calories lost",
+        data: stats.data2,
+        fill: false,
+        backgroundColor: "rgb(255,99,132)",
+        borderColor: "#9BDD7C",
+        responsive: true,
+        tension: 0.5,
+      },
+    ],
+  };
+ 
 
   const handleChange = (event) => {
-    // console.log(event.target.value);
     setStat(months[event.target.value]);
   };
 
@@ -252,7 +207,29 @@ const Chart = () => {
             }}
           />
         </div>
-        {/* <Graph options={options} series={series} type="line" width="100%" /> */}
+        <Line
+            options={{
+              responsive: true,
+              scales: {
+                x: {
+                  grid: {
+                    display: false,
+                    lineWidth: 0,
+                    weight: 0,
+                    color: "transparent",
+                  },
+                },
+                y: {
+                  min: 0,
+                  max: 500,
+                  ticks: {
+                    stepSize: 100,
+                  },
+                },
+              },
+            }}
+            data={data}
+          />
       </div>
     </div>
   );
