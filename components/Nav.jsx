@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import img from "../../public/guy.png";
-import bell from "../../public/bell.png";
-import search from "../../public/search.png";
+import img from "../public/guy.png";
+import bell from "../public/bell.png";
+import search from "../public/search.png";
 import Link from "next/link";
 import { useState } from "react";
 import { signOut } from "next-auth/react";

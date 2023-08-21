@@ -1,4 +1,4 @@
-import cam from "../../public/camera.png";
+import cam from "../public/camera.png";
 import Image from "next/image";
 const Card = ({ column }) => {
   // console.log(typeof column);

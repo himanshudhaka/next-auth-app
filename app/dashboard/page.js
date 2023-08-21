@@ -1,10 +1,10 @@
 "use client";
 import { signOut, useSession } from "next-auth/react";
 
-import Cards from "../components/Cards";
-import Nav from "../components/Nav";
-import Chart from "../components/Chart";
-import BCard from "../components/BCard";
+import Cards from "../../components/Cards";
+import Nav from "../../components/Nav";
+import Chart from "../../components/Chart";
+import BCard from "../../components/BCard";
 // import { Chart as Graph } from "chart.js/auto";
 export default function Home() {
   const data = useSession();

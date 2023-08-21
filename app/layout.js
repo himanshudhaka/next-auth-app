@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import AuthProvider from "./context/AuthProvider";
 // import { SessionProvider } from "next-auth/react";
+// import Chart from "chart.js/auto";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

@@ -11,6 +11,14 @@ import Image from "next/image";
 import imgg from "../../public/guy.png";
 import { useState, useEffect } from "react";
 export default function RootLayout({ children }) {
+  // const isBrowser = () => typeof window !== "undefined";
+  // const [lastClick, setLastClick] = useState("");
+
+  // if (isBrowser()) {
+  //   window.addEventListener("click", (e) =>
+  //     setLastClick(`${e.pageX}, ${e.pageY}`)
+  //   );
+  // }
   const [dropdown, setdropdown] = useState(false);
   const handleChange = () => {
     setdropdown(!dropdown);

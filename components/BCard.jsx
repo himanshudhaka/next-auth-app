@@ -1,5 +1,6 @@
 "use client";
-import Graph from "react-apexcharts";
+import { Chart } from "react-chartjs-2";
+
 import { useState } from "react";
 const BCard = ({ type }) => {
   const months = {
@@ -13,19 +14,19 @@ const BCard = ({ type }) => {
 
   const [stats, setStat] = useState(months["Jan"]);
 
-  let options = {
-    chart: {
-      type: "pie",
-    },
-    colors: ["#98D89E", "#F6DC7D", "#EE8484"],
-    labels: ["Basic tees", "Custom Short Pants", "Custom Short Pants"],
-    datalabels: {
-      enabled: true,
-      formatter: function (val) {
-        return;
-      },
-    },
-  };
+  // let options = {
+  //   chart: {
+  //     type: "pie",
+  //   },
+  //   colors: ["#98D89E", "#F6DC7D", "#EE8484"],
+  //   labels: ["Basic tees", "Custom Short Pants", "Custom Short Pants"],
+  //   datalabels: {
+  //     enabled: true,
+  //     formatter: function (val) {
+  //       return;
+  //     },
+  //   },
+  // };
   const series = stats;
 
   const handleChange = (event) => {
@@ -43,7 +44,7 @@ const BCard = ({ type }) => {
               className="text-gray-300 text-base font-normal"
               onChange={handleChange}
             >
-              <option selected defaultValue="Jan">
+              <option selected value="Jan">
                 January - February 2021
               </option>
               <option className="text-black" value="Feb">
@@ -80,14 +81,14 @@ const BCard = ({ type }) => {
           </div>
         </div>
         <div className="mt-6 p-4">
-          <Graph
+          {/* <Graph
             className="mx-auto"
             options={options}
             series={series}
             type="pie"
             width="100%"
             height="100%"
-          />
+          /> */}
         </div>
       </div>
     );
